@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">竖向长图拼接</string>
+    <string name="select_images">选择多张图片</string>
+    <string name="add_more_images">继续添加图片</string>
+    <string name="clear_all">清空列表</string>
+    <string name="stitch_now">开始竖向拼接</string>
+    <string name="stitching_progress">正在拼接长图中，请稍候…</string>
+    <string name="stitching_success">拼接完成！</string>
+    <string name="no_images_selected">请先选择至少 2 张图片进行拼接</string>
+    <string name="preview_title">拼接长图预览</string>
+    <string name="save_to_gallery">保存到相册</string>
+    <string name="share_image">分享长图</string>
+    <string name="save_success">已成功保存至相册！</string>
+    <string name="save_failed">保存图片失败，请检查存储权限</string>
+    <string name="settings_section_title">拼接参数设置</string>
+    <string name="width_mode_title">宽度对齐方式</string>
+    <string name="width_mode_max">按最大宽度等比拉伸</string>
+    <string name="width_mode_min">按最小宽度等比缩放</string>
+    <string name="width_mode_first">按首图宽度统一适配</string>
+    <string name="width_mode_original_center">保持原宽居中放置</string>
+    <string name="gap_title">图片纵向间距: %1$d px</string>
+    <string name="bg_color_title">背景颜色</string>
+    <string name="bg_white">白色</string>
+    <string name="bg_black">黑色</string>
+    <string name="bg_transparent">透明 (PNG格式)</string>
+    <string name="format_title">输出格式</string>
+    <string name="format_jpeg">JPEG (高画质)</string>
+    <string name="format_png">PNG (无损)</string>
+    <string name="format_webp">WEBP (紧凑高画质)</string>
+    <string name="empty_hint_title">点击上方按钮选取多张图片</string>
+    <string name="empty_hint_sub">支持长截图、照片、图表等任意竖直拼接，拖动或点击箭头可调整排列顺序</string>
+    <string name="selected_count">已选 %1$d 张图片 (上下可调整顺序)</string>
+    <string name="image_info_format">%1$d × %2$d px</string>
+    <string name="stitching_error">拼接发生错误: %1$s</string>
+    <string name="result_info">长图尺寸：%1$d × %2$d 像素，预计大小：%3$s</string>
+</resources>
