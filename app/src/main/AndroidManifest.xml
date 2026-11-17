@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.imagestitcher.vertical">
 
-    <!-- 读取相册权限 -->
+    <!-- 读取相册权限（兼容 Android 8 ~ Android 14+ 部分照片授权） -->
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VISUAL_USER_SELECTED" />
     <uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
@@ -16,8 +17,8 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:roundIcon="@drawable/ic_launcher"
         android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.VerticalImageStitcher">
 
@@ -30,6 +31,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".GalleryPickerActivity"
+            android:exported="false"
+            android:label="@string/gallery_picker_title"
+            android:parentActivityName=".MainActivity" />
 
         <activity
             android:name=".PreviewActivity"

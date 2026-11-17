@@ -7,7 +7,7 @@
     <string name="stitch_now">开始竖向拼接</string>
     <string name="stitching_progress">正在拼接长图中，请稍候…</string>
     <string name="stitching_success">拼接完成！</string>
-    <string name="no_images_selected">请先选择至少 2 张图片进行拼接</string>
+    <string name="no_images_selected">请先选择至少 1 张图片进行拼接</string>
     <string name="preview_title">拼接长图预览</string>
     <string name="save_to_gallery">保存到相册</string>
     <string name="share_image">分享长图</string>
@@ -29,9 +29,26 @@
     <string name="format_png">PNG (无损)</string>
     <string name="format_webp">WEBP (紧凑高画质)</string>
     <string name="empty_hint_title">点击上方按钮选取多张图片</string>
-    <string name="empty_hint_sub">支持长截图、照片、图表等任意竖直拼接，拖动或点击箭头可调整排列顺序</string>
-    <string name="selected_count">已选 %1$d 张图片 (上下可调整顺序)</string>
+    <string name="empty_hint_sub">按点选先后自动排序；选中后点击任意图片可放大预览并微调顺序</string>
+    <string name="selected_count">已选 %1$d 张图片 · 点击图片可放大预览</string>
     <string name="image_info_format">%1$d × %2$d px</string>
     <string name="stitching_error">拼接发生错误: %1$s</string>
     <string name="result_info">长图尺寸：%1$d × %2$d 像素，预计大小：%3$s</string>
+
+    <!-- 有序相册选择器与放大预览 -->
+    <string name="gallery_picker_title">按顺序选择图片</string>
+    <string name="system_file_picker">系统文件</string>
+    <string name="confirm_selection">确定添加 (%1$d)</string>
+    <string name="confirm_selection_empty">请选择图片</string>
+    <string name="selection_order_hint">按点击顺序编号（已选 %1$d 张），点击放大镜可预览大图</string>
+    <string name="all_photos">全部图片</string>
+    <string name="prev_image">上一张</string>
+    <string name="next_image">下一张</string>
+    <string name="move_up">上移</string>
+    <string name="move_down">下移</string>
+    <string name="close">关闭</string>
+    <string name="expand_settings">展开</string>
+    <string name="collapse_settings">收起</string>
+    <string name="permission_denied_fallback">未授予相册权限，已切换为系统文件选择器</string>
+    <string name="no_gallery_images">未在设备相册中找到图片</string>
 </resources>

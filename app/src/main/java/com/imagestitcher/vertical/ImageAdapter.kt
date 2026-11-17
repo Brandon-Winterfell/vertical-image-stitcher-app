@@ -18,7 +18,8 @@ class ImageAdapter(
     private val scope: CoroutineScope,
     private val onMoveUp: (Int) -> Unit,
     private val onMoveDown: (Int) -> Unit,
-    private val onRemove: (Int) -> Unit
+    private val onRemove: (Int) -> Unit,
+    private val onPreview: (Int) -> Unit
 ) : RecyclerView.Adapter<ImageAdapter.ViewHolder>() {
 
     private val items = mutableListOf<ImageItem>()
@@ -51,6 +52,16 @@ class ImageAdapter(
         holder.btnMoveUp.alpha = if (position > 0) 1.0f else 0.3f
         holder.btnMoveDown.isEnabled = position < items.size - 1
         holder.btnMoveDown.alpha = if (position < items.size - 1) 1.0f else 0.3f
+
+        // 点击缩略图或信息区放大预览图片
+        val previewClickListener = View.OnClickListener {
+            val currentPos = holder.bindingAdapterPosition
+            if (currentPos != RecyclerView.NO_POSITION) {
+                onPreview(currentPos)
+            }
+        }
+        holder.frameThumbnail.setOnClickListener(previewClickListener)
+        holder.layoutInfo.setOnClickListener(previewClickListener)
 
         holder.btnMoveUp.setOnClickListener {
             val currentPos = holder.bindingAdapterPosition
@@ -98,8 +109,9 @@ class ImageAdapter(
                 BitmapFactory.decodeStream(stream, null, options)
             }
 
+            // 计算下采样比率
             var sampleSize = 1
-            val targetSize = 150
+            val targetSize = 180
             while (options.outWidth / (sampleSize * 2) >= targetSize &&
                 options.outHeight / (sampleSize * 2) >= targetSize
             ) {
@@ -120,7 +132,9 @@ class ImageAdapter(
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvIndex: TextView = itemView.findViewById(R.id.tvIndex)
+        val frameThumbnail: View = itemView.findViewById(R.id.frameThumbnail)
         val ivThumbnail: ImageView = itemView.findViewById(R.id.ivThumbnail)
+        val layoutInfo: View = itemView.findViewById(R.id.layoutInfo)
         val tvName: TextView = itemView.findViewById(R.id.tvImageName)
         val tvDimensions: TextView = itemView.findViewById(R.id.tvImageDimensions)
         val btnMoveUp: ImageButton = itemView.findViewById(R.id.btnMoveUp)

@@ -132,6 +132,7 @@ object ImageStitcher {
         for (i in items.indices) {
             onProgress(i + 1, items.size)
             val item = items[i]
+            val srcBounds = dimensions[i]
             val unscaledDest = destRects[i]
 
             // 目标矩形应用缩放
